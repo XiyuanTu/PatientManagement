@@ -78,6 +78,9 @@ struct PatientManager {
     
     // Add an exam
     private mutating func addExam(_ patientId: String, _ examId: String) {
+        guard patients[patientId] != nil, exams[examId] == nil else { return }
+        patients[patientId]!.addExam(examId)
+        exams[examId] = patientId
     }
     
     // Delete a patient
