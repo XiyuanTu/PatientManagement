@@ -22,6 +22,17 @@ final class Test: XCTestCase {
         XCTAssertEqual(summary, expected)
     }
     
+    // Test edge case: add patient record, existed patient
+    func testCase2() throws {
+        guard let instructions = readFile(filename: "case2") else { return }
+        let summary = patientManager.process(instructions)
+        let expected = """
+        Name: JOHN DOE, Id: 123, Exam Count: 0
+        Name: JOE SCMOE, Id: 321, Exam Count: 0
+        """
+        XCTAssertEqual(summary, expected)
+    }
+    
     
     func readFile(filename: String) -> [String]? {
         guard let filePath = Bundle(for: type(of: self)).path(forResource: filename, ofType: "txt") else {
