@@ -55,7 +55,7 @@ final class Test: XCTestCase {
         XCTAssertEqual(summary, expected)
     }
     
-    // Test edge case: add exam record, patient not existed & existed exam
+    // Test edge case: delete exam record, exam not existed
     func testCase5() throws {
         guard let instructions = readFile(filename: "case5") else {return}
         let summary = patientManager.process(instructions)
