@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6617556A2BBB5DD90008BEC1 /* case5.txt in Resources */ = {isa = PBXBuildFile; fileRef = 661755692BBB5DD90008BEC1 /* case5.txt */; };
 		668F44722BBB494B007AAD21 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668F44712BBB494B007AAD21 /* main.swift */; };
 		668F447B2BBB49D3007AAD21 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668F447A2BBB49D3007AAD21 /* Model.swift */; };
 		668F447F2BBB4D49007AAD21 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668F447E2BBB4D49007AAD21 /* Util.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		661755692BBB5DD90008BEC1 /* case5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = case5.txt; sourceTree = "<group>"; };
 		668F446E2BBB494B007AAD21 /* PatientManagement */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PatientManagement; sourceTree = BUILT_PRODUCTS_DIR; };
 		668F44712BBB494B007AAD21 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		668F447A2BBB49D3007AAD21 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				668F449B2BBB5A74007AAD21 /* case2.txt */,
 				668F449F2BBB5C4C007AAD21 /* case3.txt */,
 				668F44A12BBB5CB1007AAD21 /* case4.txt */,
+				661755692BBB5DD90008BEC1 /* case5.txt */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			files = (
 				668F449A2BBB58DA007AAD21 /* case1.txt in Resources */,
 				668F44A02BBB5C4C007AAD21 /* case3.txt in Resources */,
+				6617556A2BBB5DD90008BEC1 /* case5.txt in Resources */,
 				668F449C2BBB5A74007AAD21 /* case2.txt in Resources */,
 				668F44A22BBB5CB1007AAD21 /* case4.txt in Resources */,
 			);
