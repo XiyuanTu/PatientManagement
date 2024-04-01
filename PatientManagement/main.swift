@@ -7,5 +7,12 @@
 
 import Foundation
 
-print("Hello, World!")
+var fileName = "instruction.txt"
+
+do {
+    let instructions = try readFile(fileName)
+    print(instructions)
+} catch let error {
+    print(error.localizedDescription)
+}
 
