@@ -7,7 +7,14 @@
 
 import Foundation
 
+let arguments = CommandLine.arguments
+
+// By default, read "instruction.txt"
 var fileName = "instruction.txt"
+
+if (arguments.count > 1) {
+    fileName = arguments[1]
+}
 
 do {
     let instructions = try readFile(fileName)
