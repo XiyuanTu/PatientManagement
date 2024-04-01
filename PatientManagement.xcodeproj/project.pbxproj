@@ -17,6 +17,7 @@
 		668F449A2BBB58DA007AAD21 /* case1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 668F44992BBB58DA007AAD21 /* case1.txt */; };
 		668F449C2BBB5A74007AAD21 /* case2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 668F449B2BBB5A74007AAD21 /* case2.txt */; };
 		668F44A02BBB5C4C007AAD21 /* case3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 668F449F2BBB5C4C007AAD21 /* case3.txt */; };
+		668F44A22BBB5CB1007AAD21 /* case4.txt in Resources */ = {isa = PBXBuildFile; fileRef = 668F44A12BBB5CB1007AAD21 /* case4.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,6 +43,7 @@
 		668F44992BBB58DA007AAD21 /* case1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = case1.txt; sourceTree = "<group>"; };
 		668F449B2BBB5A74007AAD21 /* case2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = case2.txt; sourceTree = "<group>"; };
 		668F449F2BBB5C4C007AAD21 /* case3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = case3.txt; sourceTree = "<group>"; };
+		668F44A12BBB5CB1007AAD21 /* case4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = case4.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				668F44992BBB58DA007AAD21 /* case1.txt */,
 				668F449B2BBB5A74007AAD21 /* case2.txt */,
 				668F449F2BBB5C4C007AAD21 /* case3.txt */,
+				668F44A12BBB5CB1007AAD21 /* case4.txt */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				668F449A2BBB58DA007AAD21 /* case1.txt in Resources */,
 				668F44A02BBB5C4C007AAD21 /* case3.txt in Resources */,
 				668F449C2BBB5A74007AAD21 /* case2.txt in Resources */,
+				668F44A22BBB5CB1007AAD21 /* case4.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
