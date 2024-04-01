@@ -16,9 +16,11 @@ if (arguments.count > 1) {
     fileName = arguments[1]
 }
 
+var patientManager = PatientManager()
+
 do {
     let instructions = try readFile(fileName)
-    print(instructions)
+    print(patientManager.process(instructions))
 } catch let error {
     print(error.localizedDescription)
 }
