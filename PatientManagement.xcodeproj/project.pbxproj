@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6617556A2BBB5DD90008BEC1 /* case5.txt in Resources */ = {isa = PBXBuildFile; fileRef = 661755692BBB5DD90008BEC1 /* case5.txt */; };
+		6617556C2BBB5EBF0008BEC1 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6617556B2BBB5EBF0008BEC1 /* Enum.swift */; };
 		668F44722BBB494B007AAD21 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668F44712BBB494B007AAD21 /* main.swift */; };
 		668F447B2BBB49D3007AAD21 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668F447A2BBB49D3007AAD21 /* Model.swift */; };
 		668F447F2BBB4D49007AAD21 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668F447E2BBB4D49007AAD21 /* Util.swift */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		661755692BBB5DD90008BEC1 /* case5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = case5.txt; sourceTree = "<group>"; };
+		6617556B2BBB5EBF0008BEC1 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		668F446E2BBB494B007AAD21 /* PatientManagement */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PatientManagement; sourceTree = BUILT_PRODUCTS_DIR; };
 		668F44712BBB494B007AAD21 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		668F447A2BBB49D3007AAD21 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				668F447A2BBB49D3007AAD21 /* Model.swift */,
 				668F447E2BBB4D49007AAD21 /* Util.swift */,
 				668F44802BBB54A3007AAD21 /* PatientManager.swift */,
+				6617556B2BBB5EBF0008BEC1 /* Enum.swift */,
 			);
 			path = PatientManagement;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				668F447B2BBB49D3007AAD21 /* Model.swift in Sources */,
 				668F447F2BBB4D49007AAD21 /* Util.swift in Sources */,
 				668F44722BBB494B007AAD21 /* main.swift in Sources */,
+				6617556C2BBB5EBF0008BEC1 /* Enum.swift in Sources */,
 				668F44812BBB54A3007AAD21 /* PatientManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
