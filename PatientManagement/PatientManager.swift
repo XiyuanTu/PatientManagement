@@ -35,7 +35,11 @@ struct PatientManager {
     
     // Print out a summary of the patients
     private func generateSummary() -> String {
-        return ""
+        var summarys: [String] = []
+        for patient in patients.values.sorted(by: {$0.id < $1.id}) {
+            summarys.append(patient.summary)
+        }
+        return summarys.joined(separator: "\n")
     }
     
     // Process patient related instructions
