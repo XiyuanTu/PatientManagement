@@ -94,5 +94,7 @@ struct PatientManager {
     
     // Delete an exam
     private mutating func deleteExam(_ examId: String) {
+        guard let patientId = exams.removeValue(forKey: examId) else { return }
+        patients[patientId]?.deleteExam(examId)
     }
 }
