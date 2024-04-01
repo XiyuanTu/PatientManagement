@@ -72,6 +72,8 @@ struct PatientManager {
     
     // Add a patient
     private mutating func addPatient(_ id: String, _ name: String) {
+        guard patients[id] == nil else { return }
+        patients[id] = Patient(id: id, name: name)
     }
     
     // Add an exam
