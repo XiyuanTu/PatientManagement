@@ -10,6 +10,7 @@
 		668F44722BBB494B007AAD21 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668F44712BBB494B007AAD21 /* main.swift */; };
 		668F447B2BBB49D3007AAD21 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668F447A2BBB49D3007AAD21 /* Model.swift */; };
 		668F447F2BBB4D49007AAD21 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668F447E2BBB4D49007AAD21 /* Util.swift */; };
+		668F44812BBB54A3007AAD21 /* PatientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668F44802BBB54A3007AAD21 /* PatientManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,7 @@
 		668F44712BBB494B007AAD21 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		668F447A2BBB49D3007AAD21 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		668F447E2BBB4D49007AAD21 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		668F44802BBB54A3007AAD21 /* PatientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				668F44712BBB494B007AAD21 /* main.swift */,
 				668F447A2BBB49D3007AAD21 /* Model.swift */,
 				668F447E2BBB4D49007AAD21 /* Util.swift */,
+				668F44802BBB54A3007AAD21 /* PatientManager.swift */,
 			);
 			path = PatientManagement;
 			sourceTree = "<group>";
@@ -129,6 +132,7 @@
 				668F447B2BBB49D3007AAD21 /* Model.swift in Sources */,
 				668F447F2BBB4D49007AAD21 /* Util.swift in Sources */,
 				668F44722BBB494B007AAD21 /* main.swift in Sources */,
+				668F44812BBB54A3007AAD21 /* PatientManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
