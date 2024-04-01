@@ -15,6 +15,7 @@
 		668F448D2BBB5747007AAD21 /* PatientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668F44802BBB54A3007AAD21 /* PatientManager.swift */; };
 		668F448E2BBB577F007AAD21 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668F447A2BBB49D3007AAD21 /* Model.swift */; };
 		668F449A2BBB58DA007AAD21 /* case1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 668F44992BBB58DA007AAD21 /* case1.txt */; };
+		668F449C2BBB5A74007AAD21 /* case2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 668F449B2BBB5A74007AAD21 /* case2.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +39,7 @@
 		668F44862BBB56ED007AAD21 /* Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Test.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		668F44882BBB56ED007AAD21 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		668F44992BBB58DA007AAD21 /* case1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = case1.txt; sourceTree = "<group>"; };
+		668F449B2BBB5A74007AAD21 /* case2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = case2.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			children = (
 				668F44882BBB56ED007AAD21 /* Test.swift */,
 				668F44992BBB58DA007AAD21 /* case1.txt */,
+				668F449B2BBB5A74007AAD21 /* case2.txt */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				668F449A2BBB58DA007AAD21 /* case1.txt in Resources */,
+				668F449C2BBB5A74007AAD21 /* case2.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
