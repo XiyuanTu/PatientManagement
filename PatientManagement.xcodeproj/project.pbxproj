@@ -10,6 +10,10 @@
 		6617556A2BBB5DD90008BEC1 /* case5.txt in Resources */ = {isa = PBXBuildFile; fileRef = 661755692BBB5DD90008BEC1 /* case5.txt */; };
 		6617556C2BBB5EBF0008BEC1 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6617556B2BBB5EBF0008BEC1 /* Enum.swift */; };
 		6617556D2BBB60E40008BEC1 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6617556B2BBB5EBF0008BEC1 /* Enum.swift */; };
+		6619A1C92BC3321900B74D6D /* PatientManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6619A1C72BC3321900B74D6D /* PatientManager.xcdatamodeld */; };
+		6619A1EB2BC3385100B74D6D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6619A1EA2BC3385100B74D6D /* Persistence.swift */; };
+		6619A1F02BC33C1A00B74D6D /* Patient+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6619A1EC2BC33C1A00B74D6D /* Patient+CoreDataClass.swift */; };
+		6619A1F22BC33C1A00B74D6D /* Exam+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6619A1EE2BC33C1A00B74D6D /* Exam+CoreDataClass.swift */; };
 		668F44722BBB494B007AAD21 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668F44712BBB494B007AAD21 /* main.swift */; };
 		668F447B2BBB49D3007AAD21 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668F447A2BBB49D3007AAD21 /* Model.swift */; };
 		668F447F2BBB4D49007AAD21 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668F447E2BBB4D49007AAD21 /* Util.swift */; };
@@ -38,6 +42,10 @@
 /* Begin PBXFileReference section */
 		661755692BBB5DD90008BEC1 /* case5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = case5.txt; sourceTree = "<group>"; };
 		6617556B2BBB5EBF0008BEC1 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		6619A1C82BC3321900B74D6D /* PatientManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PatientManager.xcdatamodel; sourceTree = "<group>"; };
+		6619A1EA2BC3385100B74D6D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		6619A1EC2BC33C1A00B74D6D /* Patient+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Patient+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6619A1EE2BC33C1A00B74D6D /* Exam+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exam+CoreDataClass.swift"; sourceTree = "<group>"; };
 		668F446E2BBB494B007AAD21 /* PatientManagement */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PatientManagement; sourceTree = BUILT_PRODUCTS_DIR; };
 		668F44712BBB494B007AAD21 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		668F447A2BBB49D3007AAD21 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -69,6 +77,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6619A1F42BC33C8300B74D6D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6619A1EC2BC33C1A00B74D6D /* Patient+CoreDataClass.swift */,
+				6619A1EE2BC33C1A00B74D6D /* Exam+CoreDataClass.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		668F44652BBB494B007AAD21 = {
 			isa = PBXGroup;
 			children = (
@@ -90,11 +107,14 @@
 		668F44702BBB494B007AAD21 /* PatientManagement */ = {
 			isa = PBXGroup;
 			children = (
+				6619A1F42BC33C8300B74D6D /* Model */,
 				668F44712BBB494B007AAD21 /* main.swift */,
 				668F447A2BBB49D3007AAD21 /* Model.swift */,
 				668F447E2BBB4D49007AAD21 /* Util.swift */,
 				668F44802BBB54A3007AAD21 /* PatientManager.swift */,
+				6619A1EA2BC3385100B74D6D /* Persistence.swift */,
 				6617556B2BBB5EBF0008BEC1 /* Enum.swift */,
+				6619A1C72BC3321900B74D6D /* PatientManager.xcdatamodeld */,
 			);
 			path = PatientManagement;
 			sourceTree = "<group>";
@@ -208,9 +228,13 @@
 			files = (
 				668F447B2BBB49D3007AAD21 /* Model.swift in Sources */,
 				668F447F2BBB4D49007AAD21 /* Util.swift in Sources */,
+				6619A1F22BC33C1A00B74D6D /* Exam+CoreDataClass.swift in Sources */,
 				668F44722BBB494B007AAD21 /* main.swift in Sources */,
+				6619A1EB2BC3385100B74D6D /* Persistence.swift in Sources */,
+				6619A1C92BC3321900B74D6D /* PatientManager.xcdatamodeld in Sources */,
 				6617556C2BBB5EBF0008BEC1 /* Enum.swift in Sources */,
 				668F44812BBB54A3007AAD21 /* PatientManager.swift in Sources */,
+				6619A1F02BC33C1A00B74D6D /* Patient+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +453,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6619A1C72BC3321900B74D6D /* PatientManager.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6619A1C82BC3321900B74D6D /* PatientManager.xcdatamodel */,
+			);
+			currentVersion = 6619A1C82BC3321900B74D6D /* PatientManager.xcdatamodel */;
+			path = PatientManager.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 668F44662BBB494B007AAD21 /* Project object */;
 }

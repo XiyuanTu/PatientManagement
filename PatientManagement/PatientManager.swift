@@ -8,6 +8,7 @@
 import Foundation
 
 struct PatientManager {
+    private var viewContext = PersistenceController.shared.container.viewContext
     private var patients = [String: Patient]() // Dict to hold patients by their ID
     private var exams = [String: String]() // Dict to hold patient IDs by exam ID
     
