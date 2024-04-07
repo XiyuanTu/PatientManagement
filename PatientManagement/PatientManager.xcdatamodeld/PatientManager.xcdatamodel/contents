@@ -5,7 +5,7 @@
         <attribute name="patientId" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Patient" representedClassName="Patient" syncable="YES" codeGenerationType="category">
-        <attribute name="exams" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="exams" optional="YES" attributeType="Transformable" customClassName="Set&lt;String&gt;"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
