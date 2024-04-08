@@ -6,17 +6,27 @@
 //
 
 import Foundation
+import CoreData
 
 struct PatientManager {
-    private var viewContext = PersistenceController.shared.container.viewContext
-    private var patients = [String: Patient]() // Dict to hold patients by their ID
-    private var exams = [String: String]() // Dict to hold patient IDs by exam ID
+    var viewContext: NSManagedObjectContext
+    
+    func fetchExam(_ id: String) -> Exam? {
+        do {
+            let request = Exam.fetchRequest() as NSFetchRequest<Exam>
+            let pred = NSPredicate(format: "id == %@", id)
+            request.predicate = pred
+            return try viewContext.fetch(request).first
+        } catch {
+            print("Fail to fetch a exam")
+        }
+        
+        return nil
+    }
+
     
     // Process instructions
     mutating func process(_ instructions: [String]) -> String {
-        // Reset data
-        patients = [String: Patient]()
-        exams = [String: String]()
         
         instructions.forEach { instruction in
             let instructionArr = instruction.split(separator: " ", maxSplits: 3).map{String($0)}
@@ -31,16 +41,56 @@ struct PatientManager {
             }
         }
         
-        return generateSummary()
+        let patients = fetchPatients()!
+        
+        return generateSummary(patients)
     }
     
+    
     // Get a summary of the patients
-    private func generateSummary() -> String {
+    private func generateSummary(_ patients: [Patient]) -> String {
         var summarys: [String] = []
-        for patient in patients.values.sorted(by: {$0.id < $1.id}) {
-            summarys.append(patient.summary)
+        for patient in patients {
+            summarys.append("Name: \(patient.name!), Id: \(patient.id!), Exam Count: \(patient.exams?.count ?? 0)")
         }
         return summarys.joined(separator: "\n")
+    }
+    
+    
+    func fetchPatients() -> [Patient]? {
+        do {
+            let request = Patient.fetchRequest() as NSFetchRequest<Patient>
+            let sort = NSSortDescriptor(key: "id", ascending: true)
+            request.sortDescriptors = [sort]
+            return try viewContext.fetch(request)
+        } catch {
+            print("Fail to fetch patients")
+        }
+        
+        return nil
+    }
+    
+    func fetchPatient(_ id: String) -> Patient? {
+        do {
+            let request = Patient.fetchRequest() as NSFetchRequest<Patient>
+            let pred = NSPredicate(format: "id == %@", id)
+            request.predicate = pred
+            return try viewContext.fetch(request).first
+        } catch {
+            print("Fail to fetch a patient")
+        }
+        
+        return nil
+    }
+    
+    func fetchExams() -> [Exam]? {
+        do {
+            return try viewContext.fetch(Exam.fetchRequest())
+        } catch {
+            print("Fail to fetch exams")
+        }
+        
+        return nil
     }
     
     // Process patient related instructions
@@ -76,39 +126,99 @@ struct PatientManager {
     }
     
     // Add a patient
-    private mutating func addPatient(_ id: String, _ name: String) {
-        // Check if patient doesn't exist
-        guard patients[id] == nil else { return }
-        patients[id] = Patient(id: id, name: name)
+    func addPatient(_ id: String, _ name: String) {
+        guard let existed = isExistedPatient(id), !existed else { return }
+        
+        let patient = Patient(context: viewContext)
+        patient.id = id
+        patient.name = name
+        patient.exams = Set()
+        
+        do {
+            try viewContext.save()
+        } catch {
+            print("Fail to add a patient")
+        }
     }
     
-    // Add an exam
-    private mutating func addExam(_ patientId: String, _ examId: String) {
-        // Check if patient exists and exam doesn't exist
-        guard patients[patientId] != nil, exams[examId] == nil else { return }
+    func isExistedPatient(_ id: String) -> Bool? {
+        do {
+            let request = Patient.fetchRequest() as NSFetchRequest<Patient>
+            let pred = NSPredicate(format: "id == %@", id)
+            request.predicate = pred
+            return try !viewContext.fetch(request).isEmpty
+        } catch {
+            print("Fail to check a patient")
+        }
         
-        patients[patientId]!.addExam(examId)
-        exams[examId] = patientId
+        return nil
+    }
+    
+    
+    // Add an exam
+    func addExam(_ patientId: String, _ id: String) {
+        guard let existedExam = isExistedExam(id), !existedExam, let patient = fetchPatient(patientId) else { return }
+        
+        let exam = Exam(context: viewContext)
+        exam.id = id
+        exam.patientId = patientId
+        
+        patient.exams?.insert(id)
+        
+        do {
+            try viewContext.save()
+        } catch {
+            print("Fail to add a exam")
+        }
+    }
+    
+    func isExistedExam(_ id: String) -> Bool? {
+        do {
+            let request = Exam.fetchRequest() as NSFetchRequest<Exam>
+            let pred = NSPredicate(format: "id == %@", id)
+            request.predicate = pred
+            return try !viewContext.fetch(request).isEmpty
+        } catch {
+            print("Fail to check an exam")
+        }
+        return nil
     }
     
     // Delete a patient
     private mutating func deletePatient(_ id: String) {
         // Check if patient exists
-        guard patients[id] != nil else {return}
+        guard let patient = fetchPatient(id) else {return}
         
-        // Delete patient's exams in exam dict
-        for examId in patients[id]!.exams {
-            exams.removeValue(forKey: examId)
+        if let exams = patient.exams {
+            for examId in exams {
+                if let exam = fetchExam(examId) {
+                    viewContext.delete(exam)
+                }
+            }
         }
-        patients.removeValue(forKey: id)
-    }
-    
-    // Delete an exam
-    private mutating func deleteExam(_ examId: String) {
-        // Delete exam in exam dict and get owner id
-        guard let patientId = exams.removeValue(forKey: examId) else { return }
         
+        viewContext.delete(patient)
+        
+        do {
+            try viewContext.save()
+        } catch {
+            print("Fail to delete the patient")
+        }
+    }
+
+    // Delete an exam
+    private mutating func deleteExam(_ id: String) {
+        // Delete exam in exam dict and get owner id
+        guard let exam = fetchExam(id) else {return}
+        viewContext.delete(exam)
         // Delete exam in patient's exams
-        patients[patientId]?.deleteExam(examId)
+        guard let patient = fetchPatient(exam.patientId!) else {return}
+        patient.exams = patient.exams!.filter {$0 != id}
+        
+        do {
+            try viewContext.save()
+        } catch {
+            print("Fail to delete the exam")
+        }
     }
 }
