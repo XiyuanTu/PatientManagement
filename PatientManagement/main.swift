@@ -16,7 +16,7 @@ if (arguments.count > 1) {
     fileName = arguments[1]
 }
 
-var patientManager = PatientManager()
+var patientManager = PatientManager(viewContext: PersistenceController.shared.container.viewContext)
 
 do {
     let instructions = try readFile(fileName)
