@@ -11,20 +11,6 @@ import CoreData
 struct PatientManager {
     var viewContext: NSManagedObjectContext
     
-    func fetchExam(_ id: String) -> Exam? {
-        do {
-            let request = Exam.fetchRequest() as NSFetchRequest<Exam>
-            let pred = NSPredicate(format: "id == %@", id)
-            request.predicate = pred
-            return try viewContext.fetch(request).first
-        } catch {
-            print("Fail to fetch a exam")
-        }
-        
-        return nil
-    }
-
-    
     // Process instructions
     mutating func process(_ instructions: [String]) -> String {
         
@@ -88,6 +74,19 @@ struct PatientManager {
             return try viewContext.fetch(Exam.fetchRequest())
         } catch {
             print("Fail to fetch exams")
+        }
+        
+        return nil
+    }
+    
+    func fetchExam(_ id: String) -> Exam? {
+        do {
+            let request = Exam.fetchRequest() as NSFetchRequest<Exam>
+            let pred = NSPredicate(format: "id == %@", id)
+            request.predicate = pred
+            return try viewContext.fetch(request).first
+        } catch {
+            print("Fail to fetch a exam")
         }
         
         return nil
